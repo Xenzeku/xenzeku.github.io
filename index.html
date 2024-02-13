@@ -1,1 +1,80 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Happy Valentines Day!</title>
+    
+</head>
+<body>
+    <div class="front">
+        <img src="https://i.imgflip.com/7c0528.jpg">
+        <h1>Happy Valentines Day!</h1>
+        <p>My sweet patootie~</p>
+        <h3> Will you be my valentine?</h3>
+        <button onclick="openPopup()" >Yes!</button>
+    </div>
+    <div id="myPopup" class="popup">
+        <!-- Popup content goes here -->
+        <img src="https://i.pinimg.com/originals/21/81/d3/2181d3efdc7d519951a6cffddda937f1.gif">
+        <h3>Dear Dane,</h3>
+        <p>I'm sending you this message in a form of a webpage, I want you to know that I love you so much from the bottom of my heart.     
+        </p>
+        <p>Thank you for being here with me, you are my one and only sunshine that brings me hope. Your cuteness, your enthusiastic personality warms me. 
+            Do you know that I admire you so much for being a wonderful person. Being helpful to other people who are struggling, fighting for what is right
+        and an approachable friend.</p>
+        <p>I've learned a lot being with you and I appreciate it. The bonding, the conversations, the moments, I will never about it.</p>
+        <p>As I conclude this valentines message to you, here is my only wish, whatever 
+            happpens, continue your goals, pursue your dreams. I want to see you success in life, I really do.
+        </p>
+        <p>Thank you for the memorable, wonderful moments. Let's pursue our dreams and goals together!</p>
+
+        <h4>Days We've together:</h4>
+        <div id="countup" class="countup"></div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+    <script>
+        function openPopup() {
+            var popup = document.getElementById("myPopup");
+            popup.style.display = "block";
+            setTimeout(function () {
+                popup.style.opacity = 1;
+            }, 10);
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("myPopup");
+            popup.style.opacity = 0;
+            setTimeout(function () {
+                popup.style.display = "none";
+            }, 300); // Adjust the duration to match the transition duration
+        }
+        
+    </script>
+      <script>
+        // Set the start date
+        const startDate = new Date("Dec 21, 2022 00:00:00").getTime();
+    
+        // Update the countup every 1 second
+        const x = setInterval(function() {
+    
+          // Get the current date and time
+          const now = new Date().getTime();
+    
+          // Calculate the elapsed time
+          const elapsedTime = now - startDate;
+    
+          // Calculate days, hours, minutes, and seconds
+          const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+    
+          // Display the countup
+          document.getElementById("countup").innerHTML = days + " days ";
+    
+        }, 1000);
+      </script>
+</body>
+</html>
